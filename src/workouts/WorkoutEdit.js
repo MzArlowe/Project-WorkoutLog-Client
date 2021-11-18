@@ -12,7 +12,7 @@ const WorkoutEdit = (props) => {
             body: JSON.stringify({ log: { description: editDesc, definition: editDef, result: editRes } }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${props.token}`
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
             })
         }).then((res) => {
             props.fetchWorkouts();
