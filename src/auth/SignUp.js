@@ -9,7 +9,7 @@ const SignUp = (props) => {
         event.preventDefault();
         fetch("http://localhost:3000/user/register", {
             method: "POST",
-            body: JSON.stringify({ user: { username: username, password: password } }),
+            body: JSON.stringify({ user: { email: username, password: password } }),
             headers: new Headers({
                 "Content-Type": "application/json"
             })
@@ -25,11 +25,11 @@ const SignUp = (props) => {
             <h1>Sign Up</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlfor="username">Username</Label>
+                    <Label htmlFor="username">Username</Label>
                     <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlfor="password">Password</Label>
+                    <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
                 </FormGroup>
                 <Button type="submit">Sign Up</Button>
